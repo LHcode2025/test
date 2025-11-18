@@ -26,6 +26,17 @@
             margin: 10px 0;
             text-align: center;
         }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .grid-item {
+            background-color: #222222;
+            padding: 20px;
+            text-align: center;
+        }
         .button {
             background-color: #444444;
             border: none;
@@ -33,28 +44,14 @@
             padding: 10px;
             cursor: pointer;
             text-align: center;
-            flex: 1;
-            margin: 5px;
-        }
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 10px 0;
-        }
-        .grid-item {
-            background-color: #222222;
-            flex: 1 0 21%; /* Allows for a responsive grid layout */
-            margin: 5px; 
-            padding: 20px;
-            text-align: center;
         }
         @media (max-width: 600px) {
-            .grid-item {
-                flex: 1 0 48%; /* Adjusts to 2 items in a row for mobile */
+            .grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
             }
         }
         @media (max-width: 400px) {
-            .grid-item {
+            .grid-item, .button {
                 flex: 1 0 100%; /* Stacks items on top of each other for very small screens */
             }
         }
@@ -74,10 +71,10 @@
             <div class="grid-item">Pollen Count</div>
             <div class="grid-item">Wind Speed in mph</div>
             <div class="grid-item">UV Index Icon</div>
-            <div class="button">Coat Rec</div>
-            <div class="button">Umbrella Rec</div>
-            <div class="button">UV Clothes Rec</div>
-            <div class="button">Sunglasses Rec</div>
+            <div class="grid-item">Coat Rec</div>
+            <div class="grid-item">Umbrella Rec</div>
+            <div class="grid-item">UV Clothes Rec</div>
+            <div class="grid-item">Sunglasses Rec</div>
         </div>
         <div class="info-box">Interactive Map</div>
     </div>
