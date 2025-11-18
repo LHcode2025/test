@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Info</title>
+    <link rel="icon" href="https://github.com/LHcode2025/test/raw/main/SafeWeatherLogo.png" type="image/png" sizes="32x32" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,14 +30,24 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 columns for new boxes */
+            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
             gap: 10px;
             margin: 10px 0;
         }
         .new-box {
-            background-color: #222222; /* For the weather and time boxes */
+            background-color: #222222; /* For the weather boxes */
             padding: 20px;
             text-align: center;
+            border-radius: 5px; /* Optional: for rounded corners */
+        }
+        .weather-icon-box {
+            grid-column: 4; /* Span to the far right */
+            grid-row: 1 / span 2; /* Take up two rows */
+            background-color: #444444; /* Optional: different color for emphasis */
+            padding: 40px; /* Make it larger */
+        }
+        .time-box, .location-box, .degrees-box, .rain-coverage-box {
+            height: 100px; /* Adjust height as per your design */
         }
         .grid-secondary {
             display: grid;
@@ -84,11 +95,11 @@
             <button>Search</button>
         </div>
         <div class="grid">
-            <div class="new-box">Time</div>
-            <div class="new-box">Degrees 'C</div>
-            <div class="new-box">Location Name</div>
-            <div class="new-box">Rain Coverage %</div>
-            <div class="new-box">Weather Icon</div>
+            <div class="new-box time-box">Time</div>
+            <div class="new-box location-box">Location Name</div>
+            <div class="new-box degrees-box">Degrees 'C</div>
+            <div class="new-box rain-coverage-box">Rain Coverage %</div>
+            <div class="new-box weather-icon-box">Weather Icon</div>
         </div>
 
         <div class="grid-secondary">
