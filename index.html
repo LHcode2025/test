@@ -41,10 +41,10 @@
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px; /* Increased gap between boxes */
+            gap: 20px; 
             width: 100%;
             max-width: 900px;
-            margin: 20px 0; /* Spacing above and below the grid */
+            margin: 20px 0; 
         }
         .box {
             background-color: #444;
@@ -54,6 +54,21 @@
         }
         .full-width {
             grid-column: span 3;
+        }
+        .square-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px; 
+            width: 100%;
+        }
+        .square-box {
+            background-color: #444;
+            height: 100px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
         }
         .footer {
             margin-top: 20px;
@@ -74,16 +89,20 @@
             <div class="box">Weather Icon</div>
             <div class="box">Rain Coverage</div>
             <div class="box full-width">Air Pollution</div>
-            <div class="box">Pollen Count</div>
-            <div class="box">Wind Speed in mph</div>
-            <div class="box">UV Index Icon</div>
-            <div class="box">Coat Rec</div>
-            <div class="box">Umbrella Rec</div>
-            <div class="box">UV Clothes Rec</div>
-            <div class="box">Sunglasses Rec</div>
-            <div class="box full-width">Interactive Map</div>
-            <div class="box full-width">5 Day Forecast</div>
         </div>
+
+        <div class="square-grid">
+            <div class="square-box">Pollen Count</div>
+            <div class="square-box">Wind Speed in mph</div>
+            <div class="square-box">UV Index Icon</div>
+            <div class="square-box">Coat Rec</div>
+            <div class="square-box">Umbrella Rec</div>
+            <div class="square-box">UV Clothes Rec</div>
+            <div class="square-box">Sunglasses Rec</div>
+        </div>
+
+        <div class="box full-width">Interactive Map</div>
+        <div class="box full-width">5 Day Forecast</div>
         <div class="footer"><button>Back to Top</button></div>
     </div>
 </body>
