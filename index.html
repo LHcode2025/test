@@ -1,59 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333; /* Dark background */
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+        }
 
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <title>Safe Weather</title>
-  </head>
-  <body>
-    <header>
-      <div class="container text-center my-4">
-        <div class="row justify-content-center">
-          <div class="col-auto text-center">
-            <img
-              src="./assets/images/SafeWeatherLogo.png"
-              alt="Safe Weather Logo"
-              class="d-block mx-auto mt-4 mb-4 logo"
-            />
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <div id="search" class="container">
-        <div class="row justify-content-center">
-          <div class="col-auto">
-            <div class="d-flex align-items-center gap-2">
-              <input
-                type="text"
-                id="city-postcode"
-                class="form-control"
-                placeholder="Enter city name or postcode"
-              />
-              <button id="search-btn" class="btn btn-primary">Search</button>
-              <i class="bi bi-geo-alt fs-4"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer></footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+        .logo {
+            margin-bottom: 20px; /* Space below the logo */
+            text-align: center; /* Center the logo */
+        }
+
+        .logo img {
+            width: 200px; /* Set a fixed width for the logo */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 200px; /* Fixed width for input */
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .box {
+            background-color: #444;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px; /* Space between boxes */
+            flex-grow: 1; /* Allow boxes to grow */
+            height: 120px; /* Fixed height for boxes */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - 40px); /* Full width minus margin */
+        }
+
+        .grid-row {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping to new lines */
+            justify-content: center; /* Center align boxes in rows */
+        }
+
+        .capsule {
+            background-color: #555;
+            padding: 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center; /* Center the text */
+            margin: 20px 0; /* Spacing above and below the capsule */
+            width: calc(100% - 40px); /* Full width minus margin */
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                width: 100%; /* Responsive width for mobile */
+            }
+            input[type="text"] {
+                width: 100%; /* Full width for mobile */
+            }
+            .box {
+                width: calc(100% - 20px); /* Full width minus margin for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://github.com/LHcode2025/test/blob/main/SafeWeatherLogo.png?raw=true" alt="SafeWeather Logo" />
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search City" />
+        <button>Search</button>
+    </div>
+
+    <div class="grid-row">
+        <div class="box">Time</div>
+        <div class="box">Location Name</div>
+        <div class="box">Rain Coverage %</div>
+        <div class="box">Degrees °C</div>
+        <div class="box">Weather Icon</div>
+    </div>
+
+    <div class="grid-row">
+        <div class="box">Air Pollution</div>
+        <div class="box">Pollen Count</div>
+        <div class="box">Wind Speed in mph</div>
+        <div class="box">UV Index Icon</div>
+        <div class="box">Coat Rec</div>
+        <div class="box">UV Clothes Rec</div>
+        <div class="box">Sunglasses Rec</div>
+    </div>
+
+    <div class="interactive-map box">Interactive Map</div>
+    
+    <div class="capsule">
+        <div>5 Day Forecast</div>
+    </div>
+
+    <div class="footer">
+        <button>Back to Top</button>
+    </div>
+
+</body>
 </html>
-
 
 
 
