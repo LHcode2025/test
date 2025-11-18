@@ -9,18 +9,20 @@
             font-family: Arial, sans-serif;
             background-color: #000000;
             color: #FFFFFF;
-            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         .container {
+            width: 100%;
             max-width: 800px;
-            margin: auto;
         }
-        .search {
-            margin-bottom: 20px;
-        }
-        .box {
+        .info-box {
             background-color: #222222;
-            padding: 10px;
+            padding: 20px;
             margin: 10px 0;
             text-align: center;
         }
@@ -28,32 +30,56 @@
             background-color: #444444;
             border: none;
             color: white;
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 10px;
             cursor: pointer;
+            text-align: center;
+            flex: 1;
+            margin: 5px;
         }
-        .button:hover {
-            background-color: #666666;
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 10px 0;
+        }
+        .grid-item {
+            background-color: #222222;
+            flex: 1 0 21%; /* Allows for a responsive grid layout */
+            margin: 5px; 
+            padding: 20px;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .grid-item {
+                flex: 1 0 48%; /* Adjusts to 2 items in a row for mobile */
+            }
+        }
+        @media (max-width: 400px) {
+            .grid-item {
+                flex: 1 0 100%; /* Stacks items on top of each other for very small screens */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="search">Search City <input type="text" placeholder="Enter city name"><button>Search</button></h1>
-        <div class="box">Time</div>
-        <div class="box">Degrees 'C</div>
-        <div class="box">Location Name</div>
-        <div class="box">Weather Icon</div>
-        <div class="box">Air Pollution</div>
-        <div class="box">Pollen Count</div>
-        <div class="box">Wind Speed in mph</div>
-        <div class="box">UV Index Icon</div>
-        <div class="button">Coat Rec</div>
-        <div class="button">Umbrella Rec</div>
-        <div class="button">UV Clothes Rec</div>
-        <div class="button">Sunglasses Rec</div>
-        <div class="box">Interactive Map</div>
+        <h1 class="info-box">Search City <input type="text" placeholder="Enter city name"><button>Search</button></h1>
+        <div class="info-box">
+            <div>Time</div>
+            <div>Degrees 'C</div>
+            <div>Location Name</div>
+            <div>Weather Icon</div>
+        </div>
+        <div class="grid">
+            <div class="grid-item">Air Pollution</div>
+            <div class="grid-item">Pollen Count</div>
+            <div class="grid-item">Wind Speed in mph</div>
+            <div class="grid-item">UV Index Icon</div>
+            <div class="button">Coat Rec</div>
+            <div class="button">Umbrella Rec</div>
+            <div class="button">UV Clothes Rec</div>
+            <div class="button">Sunglasses Rec</div>
+        </div>
+        <div class="info-box">Interactive Map</div>
     </div>
 </body>
 </html>
-
