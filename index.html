@@ -8,24 +8,32 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f0f0;
+            margin: 0;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            padding: 20px;
+            justify-content: center;
         }
         .container {
+            display: grid;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-columns: 1fr;
+            gap: 10px;
             background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 20px;
-            width: 300px;
-            text-align: center;
+            height: 90vh;
+            width: 90vw;
         }
         .section {
             background-color: #e0e0e0;
-            padding: 10px;
-            margin: 10px 0;
+            padding: 15px;
             border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .button {
             background-color: #00aaff;
@@ -39,53 +47,61 @@
         .button:hover {
             background-color: #0088cc;
         }
+        .temperature-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="section">
-            <input type="text" placeholder="Search City" />
-            <button class="button">Search</button>
-        </div>
+<div class="container">
+    <div class="section">
+        <input type="text" placeholder="Search City" />
+        <button class="button">Search</button>
+    </div>
 
-        <div class="section">
-            <h3>Time</h3>
-            <p>Location Name: [City Name]</p>
-            <p>Rain Coverage: %</p>
-        </div>
-        
-        <div class="section">
-            <h4>Degrees °C: 15</h4>
-            <img src="weather-icon.png" alt="Weather Icon" />
-        </div>
-        
-        <div class="section">
-            <p>Air Pollution</p>
-            <p>Pollen Count</p>
-            <p>Wind Speed</p>
-            <p>UV Index</p>
-            <p>Cost Rec</p>
-            <p>Umbrella Rec</p>
-            <p>Clothes Rec</p>
-            <p>Sunglasses Rec</p>
-        </div>
+    <div class="section">
+        <h3>Time</h3>
+        <p>Location Name: [City Name]</p>
+        <p>Rain Coverage: %</p>
+    </div>
+    
+    <div class="section">
+        <h4>Degrees °C: 15</h4>
+        <img src="weather-icon.png" alt="Weather Icon" />
+    </div>
+    
+    <div class="section">
+        <p>Air Pollution</p>
+        <p>Pollen Count</p>
+        <p>Wind Speed</p>
+        <p>UV Index</p>
+        <p>Cost Rec</p>
+        <p>Umbrella Rec</p>
+        <p>Clothes Rec</p>
+        <p>Sunglasses Rec</p>
+    </div>
 
-        <div class="section">
-            <p>Interactive Map</p>
-        </div>
+    <div class="section">
+        <p>Interactive Map</p>
+    </div>
 
-        <div class="section">
+    <div class="section">
+        <div class="temperature-buttons">
             <button class="button">15:00</button>
             <button class="button">30°</button>
             <button class="button">28°</button>
             <button class="button">18:00</button>
         </div>
-
-        <div class="section">
-            <button class="button">Back to Top</button>
-        </div>
     </div>
+
+    <div class="section">
+        <button class="button">Back to Top</button>
+    </div>
+</div>
 
 </body>
 </html>
+
