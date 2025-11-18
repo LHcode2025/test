@@ -7,28 +7,35 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #333; /* Changed to match the desired background */
+            background-color: #333; /* Dark background */
             color: white;
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
         }
         .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #222; /* Slightly darker container */
+            width: 900px; /* Set a fixed width for the container */
+            background-color: #222; /* Darker container */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr; /* Adjusted grid */
+            grid-template-rows: auto auto auto auto; /* Define rows */
+            gap: 20px; /* Space between boxes */
         }
         .search-bar {
+            grid-column: span 3; /* Takes the full width for search bar */
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
         }
         input[type="text"] {
             padding: 10px;
             border: none;
             border-radius: 5px;
-            width: 200px; /* Fixed width for consistency */
+            width: 200px; /* Fixed width for input */
         }
         button {
             padding: 10px 15px;
@@ -39,36 +46,47 @@
             cursor: pointer;
             margin-left: 10px;
         }
-        .grid, .square-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px; 
-            width: 100%;
-            max-width: 900px;
-            margin: 20px 0; 
-        }
-        .box, .square-box {
+        .time, .location, .rain-coverage {
             background-color: #444;
             padding: 20px;
             text-align: center;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add shadow to boxes */
         }
-        .full-width {
-            grid-column: span 3;
+        .degrees {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            height: 100px; /* Fixed height */
         }
-        .square-grid {
-            grid-template-columns: repeat(4, 1fr); /* 4 columns */
-        }
-        .square-box {
-            height: 100px; /* Fixed height to maintain square shape */
+        .weather-icon {
+            background-color: #444;
+            height: 200px; /* Increased height for weather icon */
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column; /* Center content vertically */
+            border-radius: 5px;
+            font-size: 24px; /* Increase font size for visibility */
+        }
+        .grid {
+            grid-column: span 3; /* Full width for grid */
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns for square grid */
+            gap: 20px; 
+        }
+        .square-box {
+            background-color: #444;
+            height: 100px; /* Fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            flex-direction: column;
         }
         .footer {
+            grid-column: span 3; /* Full width for footer */
             margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -79,15 +97,13 @@
             <button>Search</button>
         </div>
 
-        <div class="grid">
-            <div class="box">Time</div>
-            <div class="box">Location Name</div>
-            <div class="box">Degrees °C</div>
-            <div class="box">Weather Icon</div>
-            <div class="box">Rain Coverage</div>
-        </div>
+        <div class="time">Time</div>
+        <div class="location">Location Name</div>
+        <div class="rain-coverage">Rain Coverage %</div>
+        <div class="degrees">Degrees °C</div>
+        <div class="weather-icon">Weather Icon</div>
 
-        <div class="square-grid">
+        <div class="grid">
             <div class="square-box">Pollen Count</div>
             <div class="square-box">Wind Speed in mph</div>
             <div class="square-box">UV Index Icon</div>
@@ -98,8 +114,6 @@
             <div class="square-box">Air Pollution</div>
         </div>
 
-        <div class="box full-width">Interactive Map</div>
-        <div class="box full-width">5 Day Forecast</div>
         <div class="footer"><button>Back to Top</button></div>
     </div>
 </body>
