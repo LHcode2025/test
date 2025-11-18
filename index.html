@@ -3,110 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather Info</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #000000;
+            color: #FFFFFF;
+            padding: 20px;
         }
         .container {
-            display: grid;
-            grid-template-rows: auto auto auto auto auto;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-            height: 90vh;
-            width: 90vw;
+            max-width: 800px;
+            margin: auto;
         }
-        .section {
-            background-color: #e0e0e0;
-            padding: 15px;
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .search {
+            margin-bottom: 20px;
+        }
+        .box {
+            background-color: #222222;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
         }
         .button {
-            background-color: #00aaff;
-            color: white;
+            background-color: #444444;
             border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
+            color: white;
+            padding: 10px 20px;
             margin: 5px;
+            cursor: pointer;
         }
         .button:hover {
-            background-color: #0088cc;
-        }
-        .info-box {
-            grid-column: 1 / -1; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
+            background-color: #666666;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="section">
-        <input type="text" placeholder="Search City" />
-        <button class="button">Search</button>
+    <div class="container">
+        <h1 class="search">Search City <input type="text" placeholder="Enter city name"><button>Search</button></h1>
+        <div class="box">Time</div>
+        <div class="box">Degrees 'C</div>
+        <div class="box">Location Name</div>
+        <div class="box">Weather Icon</div>
+        <div class="box">Air Pollution</div>
+        <div class="box">Pollen Count</div>
+        <div class="box">Wind Speed in mph</div>
+        <div class="box">UV Index Icon</div>
+        <div class="button">Coat Rec</div>
+        <div class="button">Umbrella Rec</div>
+        <div class="button">UV Clothes Rec</div>
+        <div class="button">Sunglasses Rec</div>
+        <div class="box">Interactive Map</div>
     </div>
-
-    <div class="info-box section">
-        <h3>Time</h3>
-        <p>Location Name: [City Name]</p>
-        <p>Rain Coverage: %</p>
-    </div>
-
-    <div class="section">
-        <h4>Degrees °C: 15</h4>
-        <img src="weather-icon.png" alt="Weather Icon" />
-    </div>
-    
-    <div class="metrics">
-        <div class="section">Air Pollution</div>
-        <div class="section">Pollen Count</div>
-        <div class="section">Wind Speed</div>
-        <div class="section">UV Index</div>
-        <div class="section">Cost Rec</div>
-        <div class="section">Umbrella Rec</div>
-        <div class="section">Clothes Rec</div>
-        <div class="section">Sunglasses Rec</div>
-    </div>
-
-    <div class="section">
-        <p>Interactive Map</p>
-    </div>
-
-    <div class="section">
-        <div class="temperature-buttons">
-            <button class="button">15:00</button>
-            <button class="button">30°</button>
-            <button class="button">28°</button>
-            <button class="button">18:00</button>
-        </div>
-    </div>
-
-    <div class="section">
-        <button class="button">Back to Top</button>
-    </div>
-</div>
-
 </body>
 </html>
+
