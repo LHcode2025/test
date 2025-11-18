@@ -21,8 +21,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns */
-            grid-template-rows: auto auto auto auto; /* Define rows */
+            grid-template-columns: 1fr 1.5fr; /* Two columns */
             gap: 20px; /* Space between boxes */
         }
         .search-bar {
@@ -69,8 +68,8 @@
         }
         .footer {
             grid-column: span 2; /* Full width for footer */
-            margin-top: 20px;
             text-align: center;
+            margin-top: 20px;
         }
         .grid {
             grid-column: span 2; /* Full width for grid */
@@ -85,7 +84,6 @@
             align-items: center;
             justify-content: center;
             border-radius: 5px;
-            flex-direction: column;
         }
     </style>
 </head>
@@ -102,8 +100,6 @@
         <div class="degrees">Degrees °C</div>
         <div class="weather-icon">Weather Icon</div>
 
-        <div class="footer"><button>Back to Top</button></div>
-
         <div class="grid">
             <div class="square-box">Pollen Count</div>
             <div class="square-box">Wind Speed in mph</div>
@@ -113,6 +109,10 @@
             <div class="square-box">UV Clothes Rec</div>
             <div class="square-box">Sunglasses Rec</div>
             <div class="square-box">Air Pollution</div>
+        </div>
+        
+        <div class="footer">
+            <button>Back to Top</button>
         </div>
     </div>
 </body>
