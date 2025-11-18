@@ -3,140 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Page</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #333; /* Dark background */
-            color: white;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full height of the viewport */
-        }
-
-        .logo {
-            margin-bottom: 20px; /* Space below the logo */
-            text-align: center; /* Center the logo */
-        }
-
-        .logo img {
-            width: 200px; /* Set a fixed width for the logo */
-            height: auto; /* Maintain aspect ratio */
-        }
-
-        .search-bar {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            width: 200px; /* Fixed width for input */
-        }
-
-        button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: white;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-
-        .box {
-            background-color: #444;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-            margin: 10px; /* Space between boxes */
-            flex-grow: 1; /* Allow boxes to grow */
-            height: 120px; /* Fixed height for boxes */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: calc(100% - 40px); /* Full width minus margin */
-        }
-
-        .grid-row {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping to new lines */
-            justify-content: center; /* Center align boxes in rows */
-        }
-
-        .capsule {
-            background-color: #555;
-            padding: 20px;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center; /* Center the text */
-            margin: 20px 0; /* Spacing above and below the capsule */
-            width: calc(100% - 40px); /* Full width minus margin */
-        }
-
-        .footer {
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .logo img {
-                width: 100%; /* Responsive width for mobile */
-            }
-            input[type="text"] {
-                width: 100%; /* Full width for mobile */
-            }
-            .box {
-                width: calc(100% - 20px); /* Full width minus margin for mobile */
-            }
-        }
-    </style>
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="logo">
-        <img src="https://github.com/LHcode2025/test/blob/main/SafeWeatherLogo.png?raw=true" alt="SafeWeather Logo" />
-    </div>
-    <div class="search-bar">
-        <input type="text" placeholder="Search City" />
-        <button>Search</button>
-    </div>
+    <div class="container">
+        <header>
+            <h1>Weather Dashboard</h1>
+            <div class="search-bar">
+                <input type="text" placeholder="Search City">
+                <button>Search</button>
+            </div>
+        </header>
+        
+        <section class="current-weather">
+            <h2>Location Name</h2>
+            <p>Time: <span id="time">--:--</span></p>
+            <p>Temperature: <span id="temperature">--°C</span></p>
+            <div class="weather-icon">Weather Icon Here</div>
+            <p>Rain Coverage: <span id="rain-coverage">--%</span></p>
+        </section>
 
-    <div class="grid-row">
-        <div class="box">Time</div>
-        <div class="box">Location Name</div>
-        <div class="box">Rain Coverage %</div>
-        <div class="box">Degrees °C</div>
-        <div class="box">Weather Icon</div>
-    </div>
+        <section class="data-sections">
+            <div class="data-item">Air Pollution</div>
+            <div class="data-item">Pollen Count</div>
+            <div class="data-item">Windspeed in mph</div>
+            <div class="data-item">UV Index</div>
+            <div class="data-item">Coat Rec</div>
+            <div class="data-item">Umbrella Rec</div>
+            <div class="data-item">UV Clothes Rec</div>
+            <div class="data-item">Sunglasses Rec</div>
+        </section>
 
-    <div class="grid-row">
-        <div class="box">Air Pollution</div>
-        <div class="box">Pollen Count</div>
-        <div class="box">Wind Speed in mph</div>
-        <div class="box">UV Index Icon</div>
-        <div class="box">Coat Rec</div>
-        <div class="box">UV Clothes Rec</div>
-        <div class="box">Sunglasses Rec</div>
-    </div>
+        <section class="interactive-map">
+            <h2>Interactive Map</h2>
+            <p><!-- Embed Map Here --></p>
+        </section>
 
-    <div class="interactive-map box">Interactive Map</div>
-    
-    <div class="capsule">
-        <div>5 Day Forecast</div>
-    </div>
+        <section class="forecast">
+            <h2>Forecast</h2>
+            <div class="forecast-container">
+                <div class="forecast-item">15°C</div>
+                <div class="forecast-item">28°C</div>
+                <div class="forecast-item">28°C</div>
+            </div>
+        </section>
 
-    <div class="footer">
-        <button>Back to Top</button>
+        <footer>
+            <button onclick="window.scrollTo(0, 0)">Back to Top</button>
+        </footer>
     </div>
-
 </body>
 </html>
 
