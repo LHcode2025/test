@@ -4,80 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #222;
             color: white;
             font-family: Arial, sans-serif;
-            margin: 0;
             padding: 20px;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
         }
         .box {
             background-color: #333;
             padding: 20px;
-            flex: 1 1 150px;
             border-radius: 5px;
             text-align: center;
         }
-        .search {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-        }
-        .button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: white;
-            cursor: pointer;
-        }
         .map {
-            flex: 1 1 100%;
-            height: 200px;
-            background-color: #444;
+            height: 300px;
+            width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
 
-    <div class="search">
-        <input type="text" placeholder="Search City">
-        <button class="button">Search</button>
-        <span>📍</span>
-    </div>
-
     <div class="container">
-        <div class="box">Time</div>
-        <div class="box">Location Name</div>
-        <div class="box">Degrees "C"</div>
-        <div class="box">Weather Icon</div>
-        <div class="box">Rain Coverage</div>
-        <div class="box">Air Pollution</div>
-        <div class="box">Pollen Count</div>
-        <div class="box">Windspeed in mph</div>
-        <div class="box">UV Index Icon</div>
-        <div class="box">Coat Rec</div>
-        <div class="box">Umbrella Rec</div>
-        <div class="box">UV Clothes Rec</div>
-        <div class="box">Sunglasses Rec</div>
-        <div class="map">Interactive Map</div>
-        <div class="box">5 Day Forecast</div>
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <input class="form-control" type="text" placeholder="Search City">
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary btn-block">Search</button>
+            </div>
+            <div class="col-md-2">
+                <span>📍</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-2 box">Time</div>
+            <div class="col-sm-6 col-md-2 box">Location Name</div>
+            <div class="col-sm-6 col-md-2 box">Degrees "C"</div>
+            <div class="col-sm-6 col-md-2 box">Weather Icon</div>
+            <div class="col-sm-6 col-md-2 box">Rain Coverage</div>
+            <div class="col-sm-6 col-md-2 box">Air Pollution</div>
+            <div class="col-sm-6 col-md-2 box">Pollen Count</div>
+            <div class="col-sm-6 col-md-2 box">Windspeed</div>
+            <div class="col-sm-6 col-md-2 box">UV Index</div>
+            <div class="col-sm-6 col-md-2 box">Coat Rec</div>
+            <div class="col-sm-6 col-md-2 box">Umbrella Rec</div>
+            <div class="col-sm-6 col-md-2 box">UV Clothes Rec</div>
+            <div class="col-sm-6 col-md-2 box">Sunglasses Rec</div>
+            <div class="col-12 map" id="map">Loading Map...</div>
+            <div class="col-12 box">5 Day Forecast</div>
+        </div>
+
+        <footer class="text-center mt-4">
+            <button class="btn btn-secondary">Back to Top</button>
+        </footer>
     </div>
 
-    <footer>
-        <button class="button">Back to Top</button>
-    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function initMap() {
+            const mapElement = document.getElementById('map');
+            const map = new google.maps.Map(mapElement, {
+                zoom: 8,
+                center: { lat: 35.6762, lng: 139.6503 }, // Default location (Tokyo)
+            });
+
+            // Add marker (optional)
+            new google.maps.Marker({
+                position: { lat: 35.6762, lng: 139.6503 },
+                map: map,
+                title: 'Default Location',
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 </body>
 </html>
