@@ -15,18 +15,18 @@
             justify-content: center;
         }
         .container {
-            width: 900px; /* Set a fixed width for the container */
+            width: 900px; /* Fixed width for the container */
             background-color: #222; /* Darker container */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             display: grid;
-            grid-template-columns: 1fr 1fr 1.5fr; /* Adjusted grid */
+            grid-template-columns: 1fr 1fr; /* Two columns */
             grid-template-rows: auto auto auto auto; /* Define rows */
             gap: 20px; /* Space between boxes */
         }
         .search-bar {
-            grid-column: span 3; /* Takes the full width for search bar */
+            grid-column: span 2; /* Takes full width for search bar */
             margin-bottom: 20px;
             display: flex;
             justify-content: center;
@@ -54,22 +54,26 @@
         }
         .degrees {
             background-color: #444;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
             border-radius: 5px;
-            height: 100px; /* Fixed height */
         }
         .weather-icon {
             background-color: #444;
-            height: 200px; /* Increased height for weather icon */
+            height: 200px; /* Larger height for visibility */
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 5px;
             font-size: 24px; /* Increase font size for visibility */
         }
+        .footer {
+            grid-column: span 2; /* Full width for footer */
+            margin-top: 20px;
+            text-align: center;
+        }
         .grid {
-            grid-column: span 3; /* Full width for grid */
+            grid-column: span 2; /* Full width for grid */
             display: grid;
             grid-template-columns: repeat(4, 1fr); /* 4 columns for square grid */
             gap: 20px; 
@@ -82,11 +86,6 @@
             justify-content: center;
             border-radius: 5px;
             flex-direction: column;
-        }
-        .footer {
-            grid-column: span 3; /* Full width for footer */
-            margin-top: 20px;
-            text-align: center;
         }
     </style>
 </head>
@@ -103,6 +102,8 @@
         <div class="degrees">Degrees °C</div>
         <div class="weather-icon">Weather Icon</div>
 
+        <div class="footer"><button>Back to Top</button></div>
+
         <div class="grid">
             <div class="square-box">Pollen Count</div>
             <div class="square-box">Wind Speed in mph</div>
@@ -113,9 +114,8 @@
             <div class="square-box">Sunglasses Rec</div>
             <div class="square-box">Air Pollution</div>
         </div>
-
-        <div class="footer"><button>Back to Top</button></div>
     </div>
 </body>
 </html>
+
 
