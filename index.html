@@ -40,7 +40,7 @@
         }
         .grid-secondary {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 equal columns for air quality*/
+            grid-template-columns: repeat(4, 1fr); /* 4 equal columns for air quality */
             gap: 10px;
             margin: 10px 0;
         }
@@ -56,6 +56,10 @@
             padding: 10px;
             cursor: pointer;
             text-align: center;
+        }
+        img.logo {
+            width: 150px; /* Adjust size of the logo */
+            margin-bottom: 20px;
         }
         @media (max-width: 600px) {
             .grid {
@@ -74,8 +78,11 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="info-box">Search City <input type="text" placeholder="Enter city name"><button>Search</button></h1>
-        
+        <img src="https://github.com/LHcode2025/test/blob/main/SafeWeatherLogo.png?raw=true" alt="SafeWeather Logo" class="logo">
+        <div class="info-box">
+            <input type="text" placeholder="Enter city name">
+            <button>Search</button>
+        </div>
         <div class="grid">
             <div class="new-box">Time</div>
             <div class="new-box">Degrees 'C</div>
