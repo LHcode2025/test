@@ -47,10 +47,16 @@
         .button:hover {
             background-color: #0088cc;
         }
-        .temperature-buttons {
+        .info-box {
+            grid-column: 1 / -1; 
             display: flex;
-            justify-content: space-between;
-            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
         }
     </style>
 </head>
@@ -62,26 +68,26 @@
         <button class="button">Search</button>
     </div>
 
-    <div class="section">
+    <div class="info-box section">
         <h3>Time</h3>
         <p>Location Name: [City Name]</p>
         <p>Rain Coverage: %</p>
     </div>
-    
+
     <div class="section">
         <h4>Degrees °C: 15</h4>
         <img src="weather-icon.png" alt="Weather Icon" />
     </div>
     
-    <div class="section">
-        <p>Air Pollution</p>
-        <p>Pollen Count</p>
-        <p>Wind Speed</p>
-        <p>UV Index</p>
-        <p>Cost Rec</p>
-        <p>Umbrella Rec</p>
-        <p>Clothes Rec</p>
-        <p>Sunglasses Rec</p>
+    <div class="metrics">
+        <div class="section">Air Pollution</div>
+        <div class="section">Pollen Count</div>
+        <div class="section">Wind Speed</div>
+        <div class="section">UV Index</div>
+        <div class="section">Cost Rec</div>
+        <div class="section">Umbrella Rec</div>
+        <div class="section">Clothes Rec</div>
+        <div class="section">Sunglasses Rec</div>
     </div>
 
     <div class="section">
@@ -104,4 +110,3 @@
 
 </body>
 </html>
-
