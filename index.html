@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,27 +17,21 @@
             justify-content: center;
         }
         .container {
-            width: 900px; /* Fixed width for the container */
+            max-width: 900px; /* Max width for the container */
             background-color: #222; /* Darker container */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            display: grid;
-            grid-template-columns: 1fr 1.5fr; /* Two columns */
-            gap: 20px; /* Space between boxes */
         }
         .logo {
-            grid-column: span 2; /* Takes full width */
-            display: flex;
-            justify-content: center; /* Center the logo */
             margin-bottom: 20px; /* Space below the logo */
+            text-align: center; /* Center the logo */
         }
         .logo img {
-            max-width: 100%; /* Responsive logo */
+            width: 200px; /* Set a fixed width for the logo */
             height: auto; /* Maintain aspect ratio */
         }
         .search-bar {
-            grid-column: span 2; /* Takes full width for search bar */
             margin-bottom: 20px;
             display: flex;
             justify-content: center;
@@ -55,37 +51,15 @@
             cursor: pointer;
             margin-left: 10px;
         }
-        .time, .location, .rain-coverage {
+        .time, .location, .rain-coverage, .degrees, .weather-icon {
             background-color: #444;
             padding: 20px;
             text-align: center;
             border-radius: 5px;
-        }
-        .degrees {
-            background-color: #444;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-        }
-        .weather-icon {
-            background-color: #444;
-            height: 200px; /* Larger height for visibility */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 5px;
-            font-size: 24px; /* Increase font size for visibility */
+            margin-bottom: 15px; /* Space between boxes */
         }
         .footer {
-            grid-column: span 2; /* Full width for footer */
             text-align: center;
-            margin-top: 20px;
-        }
-        .grid {
-            grid-column: span 2; /* Full width for grid */
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns for square grid */
-            gap: 20px; 
         }
         .square-box {
             background-color: #444;
@@ -94,6 +68,14 @@
             align-items: center;
             justify-content: center;
             border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .logo img {
+                width: 100%; /* Responsive width for mobile */
+            }
+            input[type="text"] {
+                width: 100%; /* Full width for mobile */
+            }
         }
     </style>
 </head>
@@ -113,15 +95,15 @@
         <div class="degrees">Degrees °C</div>
         <div class="weather-icon">Weather Icon</div>
 
-        <div class="grid">
-            <div class="square-box">Pollen Count</div>
-            <div class="square-box">Wind Speed in mph</div>
-            <div class="square-box">UV Index Icon</div>
-            <div class="square-box">Coat Rec</div>
-            <div class="square-box">Umbrella Rec</div>
-            <div class="square-box">UV Clothes Rec</div>
-            <div class="square-box">Sunglasses Rec</div>
-<div class="square-box">Air Pollution</div>
+        <div class="grid row">
+            <div class="square-box col-md-3">Pollen Count</div>
+            <div class="square-box col-md-3">Wind Speed in mph</div>
+            <div class="square-box col-md-3">UV Index Icon</div>
+            <div class="square-box col-md-3">Coat Rec</div>
+            <div class="square-box col-md-3">Umbrella Rec</div>
+            <div class="square-box col-md-3">UV Clothes Rec</div>
+            <div class="square-box col-md-3">Sunglasses Rec</div>
+            <div class="square-box col-md-3">Air Pollution</div>
         </div>
         
         <div class="footer">
@@ -130,6 +112,7 @@
     </div>
 </body>
 </html>
+
 
 
 
