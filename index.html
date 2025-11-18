@@ -19,6 +19,7 @@
         .container {
             width: 100%;
             max-width: 800px;
+            text-align: center;
         }
         .info-box {
             background-color: #222222;
@@ -28,7 +29,7 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns for the main boxes */
             gap: 10px;
             margin: 10px 0;
         }
@@ -36,6 +37,10 @@
             background-color: #222222;
             padding: 20px;
             text-align: center;
+        }
+        .small-box {
+            background-color: #222222; /* For the weather and time boxes */
+            padding: 20px;
         }
         .button {
             background-color: #444444;
@@ -60,11 +65,12 @@
 <body>
     <div class="container">
         <h1 class="info-box">Search City <input type="text" placeholder="Enter city name"><button>Search</button></h1>
-        <div class="info-box">
-            <div>Time</div>
-            <div>Degrees 'C</div>
-            <div>Location Name</div>
-            <div>Weather Icon</div>
+        <div class="grid">
+            <div class="grid-item small-box">Time</div>
+            <div class="grid-item small-box">Degrees 'C</div>
+            <div class="grid-item small-box">Location Name</div>
+            <div class="grid-item small-box">Rain Coverage %</div>
+            <div class="grid-item small-box">Weather Icon</div>
         </div>
         <div class="grid">
             <div class="grid-item">Air Pollution</div>
