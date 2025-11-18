@@ -3,87 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Weather App</title>
     <style>
         body {
-            background-color: #222;
+            background-color: black;
             color: white;
             font-family: Arial, sans-serif;
-            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
         }
-        .box {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
+        #logo {
+            width: 150px;  /* Adjust size as needed */
+            height: 150px; /* Adjust size as needed */
+            background-color: gray; /* Placeholder for the logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
         }
-        .map {
-            height: 300px;
-            width: 100%;
-            border-radius: 5px;
-            overflow: hidden;
+        #search-container {
+            display: flex;
+            align-items: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .location-icon {
+            margin-left: 10px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="row mb-4">
-            <div class="col-md-8">
-                <input class="form-control" type="text" placeholder="Search City">
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-primary btn-block">Search</button>
-            </div>
-            <div class="col-md-2">
-                <span>📍</span>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 col-md-2 box">Time</div>
-            <div class="col-sm-6 col-md-2 box">Location Name</div>
-            <div class="col-sm-6 col-md-2 box">Degrees "C"</div>
-            <div class="col-sm-6 col-md-2 box">Weather Icon</div>
-            <div class="col-sm-6 col-md-2 box">Rain Coverage</div>
-            <div class="col-sm-6 col-md-2 box">Air Pollution</div>
-            <div class="col-sm-6 col-md-2 box">Pollen Count</div>
-            <div class="col-sm-6 col-md-2 box">Windspeed</div>
-            <div class="col-sm-6 col-md-2 box">UV Index</div>
-            <div class="col-sm-6 col-md-2 box">Coat Rec</div>
-            <div class="col-sm-6 col-md-2 box">Umbrella Rec</div>
-            <div class="col-sm-6 col-md-2 box">UV Clothes Rec</div>
-            <div class="col-sm-6 col-md-2 box">Sunglasses Rec</div>
-            <div class="col-12 map" id="map">Loading Map...</div>
-            <div class="col-12 box">5 Day Forecast</div>
-        </div>
-
-        <footer class="text-center mt-4">
-            <button class="btn btn-secondary">Back to Top</button>
-        </footer>
+    <div id="logo">
+        Logo for App
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function initMap() {
-            const mapElement = document.getElementById('map');
-            const map = new google.maps.Map(mapElement, {
-                zoom: 8,
-                center: { lat: 35.6762, lng: 139.6503 }, // Default location (Tokyo)
-            });
-
-            // Add marker (optional)
-            new google.maps.Marker({
-                position: { lat: 35.6762, lng: 139.6503 },
-                map: map,
-                title: 'Default Location',
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <div id="search-container">
+        <input type="text" placeholder="Search City">
+        <button>Search</button>
+        <span class="location-icon">📍</span>
+    </div>
 
 </body>
 </html>
