@@ -3,61 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather Page</title>
     <style>
         body {
-            background-color: black;
-            color: white;
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
-        #logo {
-            width: 150px; 
-            height: auto; 
+        .search-bar {
             margin-bottom: 20px;
-        }
-        #search-container {
-            display: flex;
-            align-items: center;
         }
         input[type="text"] {
             padding: 10px;
             border: none;
-            border-radius: 5px 0 0 5px;
-            outline: none;
+            border-radius: 5px;
         }
         button {
-            padding: 10px;
+            padding: 10px 15px;
             border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            background-color: #007BFF;
+            border-radius: 5px;
+            background-color: #555;
             color: white;
+            cursor: pointer;
         }
-        button:hover {
-            background-color: #0056b3;
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 900px;
         }
-        .location-icon {
-            margin-left: 10px;
+        .box {
+            background-color: #444;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .full-width {
+            grid-column: span 3;
+        }
+        .footer {
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search City" />
+            <button>Search</button>
+        </div>
 
-    <img id="logo" src="https://github.com/LHcode2025/test/blob/main/SafeWeatherLogo%20(1).png?raw=true" alt="Logo for App">
-
-    <div id="search-container">
-        <input type="text" placeholder="Search City">
-        <button>Search</button>
-        <span class="location-icon">📍</span>
+        <div class="grid">
+            <div class="box">Time</div>
+            <div class="box">Location Name</div>
+            <div class="box">Degrees °C</div>
+            <div class="box">Weather Icon</div>
+            <div class="box">Rain Coverage</div>
+            <div class="box full-width">Air Pollution</div>
+            <div class="box">Pollen Count</div>
+            <div class="box">Wind Speed in mph</div>
+            <div class="box">UV Index Icon</div>
+            <div class="box">Coat Rec</div>
+            <div class="box">Umbrella Rec</div>
+            <div class="box">UV Clothes Rec</div>
+            <div class="box">Sunglasses Rec</div>
+            <div class="box full-width">Interactive Map</div>
+            <div class="box full-width">5 Day Forecast</div>
+        </div>
+        <div class="footer"><button>Back to Top</button></div>
     </div>
-
 </body>
 </html>
-
 
