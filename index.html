@@ -30,34 +30,34 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+            grid-template-columns: repeat(5, 1fr);
             gap: 10px;
             margin: 10px 0;
         }
         .new-box {
-            background-color: #222222; /* For the weather boxes */
+            background-color: #222222;
             padding: 20px;
             text-align: center;
-            border-radius: 5px; /* Optional: for rounded corners */
+            border-radius: 5px;
         }
         .time-box, .location-box, .rain-coverage-box {
-            grid-column: 1; /* Keep these on the far left */
-            height: 100px; /* Set a consistent height */
+            grid-column: 1;
+            height: 100px;
         }
         .degrees-box {
-            grid-column: 4; /* Place this next to the weather icon */
-            height: 100px; /* Consistent height for degrees box */
+            grid-column: 4;
+            height: 100px;
         }
         .weather-icon-box {
-            grid-column: 5; /* Span to the far right */
-            height: 100px; /* Set to be a square */
-            width: 100px; /* Set width to create a square */
-            background-color: #444444; /* Different color for emphasis */
-            padding: 20px; /* Adjust padding as needed */
+            grid-column: 5;
+            height: 100px;
+            width: 100px;
+            background-color: #444444;
+            padding: 20px;
         }
         .grid-secondary {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 equal columns for air quality */
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
             margin: 10px 0;
         }
@@ -74,21 +74,28 @@
             cursor: pointer;
             text-align: center;
         }
-        img.logo {
-            width: 150px; /* Adjust size of the logo */
+        .logo {
+            width: 150px;
             margin-bottom: 20px;
+        }
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px; /* Space between search bar and other content */
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 10px; /* Add space above the input */
+            border: none;
+            border-radius: 5px;
         }
         @media (max-width: 600px) {
             .grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens for new boxes */
+                grid-template-columns: repeat(2, 1fr);
             }
             .grid-secondary {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens for air quality */
-            }
-        }
-        @media (max-width: 400px) {
-            .button {
-                flex: 1 0 100%; /* Stacks items on top of each other for very small screens */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -96,8 +103,12 @@
 <body>
     <div class="container">
         <img src="https://github.com/LHcode2025/test/blob/main/SafeWeatherLogo.png?raw=true" alt="SafeWeather Logo" class="logo">
-        <input type="text" placeholder="Enter city name">
-        <button>Search</button>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Enter city name">
+            <button class="button">Search</button>
+        </div>
+
         <div class="grid">
             <div class="new-box time-box">Time</div>
             <div class="new-box location-box">Location Name</div>
@@ -108,7 +119,7 @@
 
         <div class="grid-secondary">
             <div class="grid-item">Air Pollution</div>
- <div class="grid-item">Pollen Count</div>
+            <div class="grid-item">Pollen Count</div>
             <div class="grid-item">Wind Speed in mph</div>
             <div class="grid-item">UV Index Icon</div>
             <div class="grid-item">Coat Rec</div>
