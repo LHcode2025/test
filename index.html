@@ -39,19 +39,21 @@
             padding: 20px;
             text-align: center;
             border-radius: 5px; /* Optional: for rounded corners */
-            height: 100px; /* Set a consistent height for each box */
         }
         .time-box, .location-box, .rain-coverage-box {
             grid-column: 1; /* Keep these on the far left */
+            height: 100px; /* Set a consistent height */
         }
         .degrees-box {
-            grid-column: 2; /* Place this next to the left column */
+            grid-column: 4; /* Place this next to the weather icon */
+            height: 100px; /* Consistent height for degrees box */
         }
         .weather-icon-box {
-            grid-column: 3 / span 3; /* Span to the right for larger icon */
-            grid-row: 1 / span 2; /* Make it larger */
-            background-color: #444444; /* Optional: different color for emphasis */
-            padding: 40px; /* Make it larger */
+            grid-column: 5; /* Span to the far right */
+            height: 100px; /* Set to be a square */
+            width: 100px; /* Set width to create a square */
+            background-color: #444444; /* Different color for emphasis */
+            padding: 20px; /* Adjust padding as needed */
         }
         .grid-secondary {
             display: grid;
@@ -108,7 +110,7 @@
 
         <div class="grid-secondary">
             <div class="grid-item">Air Pollution</div>
-            <div class="grid-item">Pollen Count</div>
+ <div class="grid-item">Pollen Count</div>
             <div class="grid-item">Wind Speed in mph</div>
             <div class="grid-item">UV Index Icon</div>
             <div class="grid-item">Coat Rec</div>
@@ -121,4 +123,3 @@
     </div>
 </body>
 </html>
-
