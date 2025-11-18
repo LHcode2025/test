@@ -30,7 +30,7 @@
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+            grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
             gap: 10px;
             margin: 10px 0;
         }
@@ -39,15 +39,19 @@
             padding: 20px;
             text-align: center;
             border-radius: 5px; /* Optional: for rounded corners */
+            height: 100px; /* Set a consistent height for each box */
+        }
+        .time-box, .location-box, .rain-coverage-box {
+            grid-column: 1; /* Keep these on the far left */
+        }
+        .degrees-box {
+            grid-column: 2; /* Place this next to the left column */
         }
         .weather-icon-box {
-            grid-column: 4; /* Span to the far right */
-            grid-row: 1 / span 2; /* Take up two rows */
+            grid-column: 3 / span 3; /* Span to the right for larger icon */
+            grid-row: 1 / span 2; /* Make it larger */
             background-color: #444444; /* Optional: different color for emphasis */
             padding: 40px; /* Make it larger */
-        }
-        .time-box, .location-box, .degrees-box, .rain-coverage-box {
-            height: 100px; /* Adjust height as per your design */
         }
         .grid-secondary {
             display: grid;
@@ -97,8 +101,8 @@
         <div class="grid">
             <div class="new-box time-box">Time</div>
             <div class="new-box location-box">Location Name</div>
-            <div class="new-box degrees-box">Degrees 'C</div>
             <div class="new-box rain-coverage-box">Rain Coverage %</div>
+            <div class="new-box degrees-box">Degrees 'C</div>
             <div class="new-box weather-icon-box">Weather Icon</div>
         </div>
 
@@ -117,3 +121,4 @@
     </div>
 </body>
 </html>
+
